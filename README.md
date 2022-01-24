@@ -1,2 +1,0 @@
-# prueba-atomic
-examen practico
