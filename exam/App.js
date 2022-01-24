@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
- import React from 'react';
+ import React, {useRef} from 'react';
  import {
    SafeAreaView,
    ImageBackground,
@@ -27,11 +27,23 @@
  
  
  const App = () => {
+   const scrollRef = useRef()
+
+   const handleScrollto = () =>{
+     scrollRef.current.scrollTo({
+      x:0,
+      y:900,
+      animated: true
+     })
+   }
    return(
      
        <ImageBackground style={styles.container} source={require('./assets/Mask_Group_1.png')}>
-        <ScrollView>
-          <HomeInit/>
+        <ScrollView
+          ref={scrollRef}
+          
+        >
+          <HomeInit handleScrollto={handleScrollto}/>
           <HomeMiddle/>
           <HomeEnd/>
         </ScrollView>

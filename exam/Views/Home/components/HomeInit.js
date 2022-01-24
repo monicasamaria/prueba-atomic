@@ -16,7 +16,9 @@ import {
 
 
 
-  const HomeInit = () => {
+  const HomeInit = ({
+    handleScrollto
+  }) => {
     return(
         <View style={styles.body}>
             <View style={styles.containerColumn}>
@@ -33,7 +35,7 @@ import {
               <TouchableOpacity
                 onPress={() =>{
 
-
+                  handleScrollto()
                 }
                   
 
