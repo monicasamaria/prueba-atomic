@@ -1,4 +1,6 @@
 import React from "react";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
     SafeAreaView,
     ImageBackground,
@@ -17,7 +19,7 @@ import {
 
 
   const HomeInit = ({
-    handleScrollto
+    handleScrollto, navigation
   }) => {
     return(
         <View style={styles.body}>
@@ -50,7 +52,7 @@ import {
               <Pressable
               
               onPress={()=>{
-                console.log('boton')
+                navigation.navigate('Form')
               }}
               style={styles.button}>
                 <Text style={styles.buttonText}>¡Quiero ser parte!</Text>

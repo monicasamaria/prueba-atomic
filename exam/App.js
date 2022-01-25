@@ -7,47 +7,36 @@
  */
 
  import React, {useRef} from 'react';
+
+ import { NavigationContainer } from '@react-navigation/native';
+ import { createNativeStackNavigator } from '@react-navigation/native-stack';
+ 
  import {
-   SafeAreaView,
-   ImageBackground,
-   ScrollView,
-   Button,
-   StyleSheet,
-   Text,
-   TouchableOpacity,
-   View,
-   Image,
-   Pressable,
-   TouchableOpacityBase,
+   StyleSheet
  } from 'react-native';
- import HomeEnd from './Views/Home/components/HomeEnd';
+import Home from './Views/Home/Home';
+import FormScreen from './Views/Form/FormScreen';
+import ScreenSuccess from './Views/ScreenSuccess/ScreenSuccess';
  
- import HomeInit from './Views/Home/components/HomeInit';
- import HomeMiddle from './Views/Home/components/HomeMiddle';
- 
+const Stack = createNativeStackNavigator(
+
+);
+
  
  const App = () => {
-   const scrollRef = useRef()
-
-   const handleScrollto = () =>{
-     scrollRef.current.scrollTo({
-      x:0,
-      y:900,
-      animated: true
-     })
-   }
+   
    return(
      
-       <ImageBackground style={styles.container} source={require('./assets/Mask_Group_1.png')}>
-        <ScrollView
-          ref={scrollRef}
-          
-        >
-          <HomeInit handleScrollto={handleScrollto}/>
-          <HomeMiddle/>
-          <HomeEnd/>
-        </ScrollView>
-        </ImageBackground>
+       <>
+          <NavigationContainer>
+            <Stack.Navigator>
+              <Stack.Screen name="Home" component={Home} options={{ headerShown: false}}  />
+              <Stack.Screen name="Form" component={FormScreen} options={{ headerShown: false}} />
+              <Stack.Screen name="Final" component={ScreenSuccess} options={{ headerShown: false}} />
+            </Stack.Navigator>
+          </NavigationContainer>
+       
+       </>
      
      
    );

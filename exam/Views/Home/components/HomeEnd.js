@@ -6,6 +6,7 @@ import {
     Image,
     Pressable
   } from 'react-native';
+import Footer from "./Fotter";
 
   const HomeEnd = () => {
 
@@ -67,16 +68,7 @@ import {
                   
               </View>
 
-              <View style={styles.footer}>
-                <Text style={styles.textfooter1}>2020 AtomicLabs. Todos los derechos reservados.</Text>
-                <Text style={styles.textfooter2}>Aviso de privacidad</Text>
-
-                <View style={styles.footerImage}>
-                  <Image style={{marginHorizontal: 25}} source={require('../../../assets/linkedin.png')}></Image>
-                  <Image style={{marginVertical: 5}} source={require('../../../assets/twitter.png')}></Image>
-
-                </View>
-              </View>
+             <Footer/>
 
             </View>
             
@@ -209,7 +201,8 @@ import {
 
       flexDirection: 'row',
       justifyContent: 'center',
-      marginTop: 35
+      marginTop: 35,
+      color: '#fff'
     }
 });
 
